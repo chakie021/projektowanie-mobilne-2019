@@ -29,6 +29,15 @@ public class Activity1 extends AppCompatActivity {
             }
         });
 
+        linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                mPoints = 0;
+                clickerText.setText(""+mPoints);
+                return true;
+            }
+        });
+
 
         
     }
