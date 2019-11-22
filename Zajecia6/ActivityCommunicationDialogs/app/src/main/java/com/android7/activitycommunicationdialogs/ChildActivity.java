@@ -1,7 +1,10 @@
 package com.android7.activitycommunicationdialogs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ChildActivity extends AppCompatActivity {
     TextView mName;
     TextView mSurname;
+
+    Button mSave;
+    Button mCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,26 @@ public class ChildActivity extends AppCompatActivity {
         mName = findViewById(R.id.name);
         mSurname = findViewById(R.id.surname);
 
+        mSave = findViewById(R.id.save_button);
+        mSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("Data0",100);
+                setResult(RESULT_OK,intent);
+                finish();
+            }
+        });
+
+        mCancel = findViewById(R.id.cancel_button);
+        mCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setResult(RESULT_CANCELED);
+                finish();
+            }
+        });
+
         Bundle bundle = getIntent().getExtras();
 
         if(bundle!=null){
@@ -33,8 +59,6 @@ public class ChildActivity extends AppCompatActivity {
 
             mName.setText(name);
             mSurname.setText(surname);
-
-            //Toast.makeText(this,name+" "+surname,Toast.LENGTH_LONG).show();
         }
 
 

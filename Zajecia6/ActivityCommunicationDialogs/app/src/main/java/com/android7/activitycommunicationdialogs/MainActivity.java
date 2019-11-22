@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -17,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_NAME = "name";
     public static final String KEY_SURNAME = "nazwisko";
 
+    public static final int RESULT_CHILD = 10;
+
+    EditText mEditName;
+    EditText mEditSurname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
+
+        mEditName = findViewById(R.id.edit_name);
+        mEditSurname = findViewById(R.id.edit_surname);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,12 +44,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 Intent intent = new Intent(MainActivity.this,ChildActivity.class);
-                intent.putExtra(KEY_NAME,"Przemysław");
-                intent.putExtra(KEY_SURNAME,"Stokłosa");
+                intent.putExtra(KEY_NAME,mEditName.getText().toString());
+                intent.putExtra(KEY_SURNAME,mEditSurname.getText().toString());
 
-                startActivity(intent);
+                startActivityForResult(intent, RESULT_CHILD);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode== RESULT_CHILD){
+
+            if(resultCode == RESULT_OK) {
+                Toast.makeText(this, "Save data: "+data.getIntExtra("Data0",0), Toast.LENGTH_LONG).show();
+
+            }
+            if(resultCode == RESULT_CANCELED)
+                Toast.makeText(this,"Result canceled",Toast.LENGTH_LONG).show();
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
