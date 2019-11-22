@@ -13,6 +13,22 @@
         android:background="?attr/colorPrimary"
         android:elevation="2dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:text="Name"
+        />
+    <TextView
+        android:id="@+id/surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_alignParentLeft="true"
+        android:text="Surname"
+        />
     <View
         android:id="@+id/center_view"
         android:layout_width="100dp"

@@ -14,6 +14,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KEY_NAME = "name";
+    public static final String KEY_SURNAME = "nazwisko";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 Intent intent = new Intent(MainActivity.this,ChildActivity.class);
+                intent.putExtra(KEY_NAME,"Przemysław");
+                intent.putExtra(KEY_SURNAME,"Stokłosa");
+
                 startActivity(intent);
             }
         });
