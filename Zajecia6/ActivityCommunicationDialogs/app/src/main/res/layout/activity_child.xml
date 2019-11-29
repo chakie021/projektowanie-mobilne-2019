@@ -13,13 +13,23 @@
         android:background="?attr/colorPrimary"
         android:elevation="2dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <TableLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:background="@color/cardview_dark_background"
+        >
+    </TableLayout>
     <TextView
         android:id="@+id/name_text"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@id/toolbar"
         android:layout_alignParentLeft="true"
         android:text="Imię:"
+        android:textAlignment="textEnd"
         />
     <TextView
         android:id="@+id/name"
@@ -27,14 +37,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_toEndOf="@id/name_text"
+        android:paddingStart="5dp"
         android:text="Name"
+        />
+    <TextView
+        android:id="@+id/surname_text"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/name_text"
+        android:text="Nazwisko:"
+        android:textAlignment="textEnd"
         />
     <TextView
         android:id="@+id/surname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
-        android:layout_alignParentLeft="true"
+        android:layout_toEndOf="@id/surname_text"
+        android:paddingStart="5dp"
         android:text="Surname"
         />
     <View
