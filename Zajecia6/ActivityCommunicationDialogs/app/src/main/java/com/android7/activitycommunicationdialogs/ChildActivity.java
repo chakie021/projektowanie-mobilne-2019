@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,9 @@ public class ChildActivity extends AppCompatActivity {
 
     Button mSave;
     Button mCancel;
+
+    EditText mWaga;
+    EditText mWzrost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,8 @@ public class ChildActivity extends AppCompatActivity {
 
         mName = findViewById(R.id.name);
         mSurname = findViewById(R.id.surname);
+        mWaga = findViewById(R.id.waga);
+        mWzrost = findViewById(R.id.wzrost);
 
         mSave = findViewById(R.id.save_button);
         mSave.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +43,8 @@ public class ChildActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("Data0",100);
+                intent.putExtra("wzrost",mWzrost.getText());
+                intent.putExtra("waga",mWaga.getText());
                 setResult(RESULT_OK,intent);
                 finish();
             }
