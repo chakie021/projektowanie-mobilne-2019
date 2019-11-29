@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         mEditName = findViewById(R.id.edit_name);
         mEditSurname = findViewById(R.id.edit_surname);
 
+        mEditName.setText("Przemysław");
+        mEditSurname.setText("Stokłosa");
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
