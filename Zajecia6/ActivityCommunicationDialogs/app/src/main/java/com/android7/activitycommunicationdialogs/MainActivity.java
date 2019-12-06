@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode== RESULT_CHILD){
 
             if(resultCode == RESULT_OK) {
-                Toast.makeText(this, "Save data: "+data.getIntExtra("Data0",0), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Save data: "+data.getIntExtra("waga",0), Toast.LENGTH_LONG).show();
 
             }
             if(resultCode == RESULT_CANCELED)
