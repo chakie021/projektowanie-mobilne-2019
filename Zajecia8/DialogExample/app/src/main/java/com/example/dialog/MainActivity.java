@@ -1,6 +1,7 @@
 package com.example.dialog;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -69,7 +70,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openDialog1(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Okno z przyciskami");
+        builder.setMessage("Czy dane mają zostać zapisane?");
 
+        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.setNegativeButton("Nie", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
     }
 
     private void openDialog2(){
