@@ -1,5 +1,6 @@
 package com.example.dialog;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -58,7 +59,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openDialog0(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Tytył okna");
+        builder.setMessage("Przykładowy tekst okna dialogowego");
 
+        AlertDialog dialog = builder.create();
+
+        dialog.show();
     }
 
     private void openDialog1(){
