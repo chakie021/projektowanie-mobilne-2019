@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new Fragment1()).commitNow();
+
 
     }
 
