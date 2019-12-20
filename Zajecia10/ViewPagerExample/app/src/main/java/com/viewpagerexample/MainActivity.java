@@ -5,14 +5,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+    class fragmentAdapter extends FragmentStatePagerAdapter{
+
+        public fragmentAdapter(@NonNull FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+            return new Fragment1();
+        }
+
+        @Override
+        public int getCount() {
+            return 1;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager.setAdapter(new fragmentAdapter(getSupportFragmentManager()));
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.container,new Fragment1()).commitNow();
 
