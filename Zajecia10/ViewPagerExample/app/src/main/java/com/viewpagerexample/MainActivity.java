@@ -7,6 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new Fragment1()).commitNow();
+        ViewPager viewPager = findViewById(R.id.viewpager);
+
+        //getSupportFragmentManager().beginTransaction().replace(R.id.container,new Fragment1()).commitNow();
 
 
     }
