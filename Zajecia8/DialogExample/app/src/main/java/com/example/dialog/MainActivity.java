@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openDialog3(){
-
+        MyDialog dialog = new MyDialog();
+        dialog.show(getSupportFragmentManager(),"dialog");
     }
 }
