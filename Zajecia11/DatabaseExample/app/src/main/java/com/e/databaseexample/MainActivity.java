@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                mStudents.add(new Student("Przemyslaw","Stokłosa"));
+                textView.setText(""+mStudents.size());
             }
         });
     }
