@@ -8,13 +8,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.room.Room;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    ArrayList<Student> mStudents = new ArrayList<>();
+    List<Student> mStudents = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +27,18 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView textView = findViewById(R.id.students_no);
 
+        AppDatabase appDatabase = Room.databaseBuilder(this,AppDatabase.class,"baza").
+                allowMainThreadQueries().build();
+
+        StudentDao studentDao = appDatabase.studentDao();
+        mStudents = studentDao.getStudents();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                mStudents.add(new Student("Przemyslaw","Stokłosa"));
+                studentDao.insert(new Student("Przemyslaw","Stokłosa"));
                 textView.setText(""+mStudents.size());
             }
         });
