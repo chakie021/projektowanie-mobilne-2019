@@ -33,12 +33,18 @@ public class MainActivity extends AppCompatActivity {
         StudentDao studentDao = appDatabase.studentDao();
         mStudents = studentDao.getStudents();
 
+        textView.setText(""+mStudents.size());
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                studentDao.insert(new Student("Przemyslaw","Stokłosa"));
+                Student student = new Student("Przemyslaw","Stokłosa");
+
+                mStudents.add(student);
+                studentDao.insert(student);
+
                 textView.setText(""+mStudents.size());
             }
         });
