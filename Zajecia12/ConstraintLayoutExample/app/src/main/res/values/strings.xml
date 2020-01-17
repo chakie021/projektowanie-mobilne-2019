@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ConstraintLayoutExample</string>
+    <string name="name">Imię</string>
+    <string name="surname">Nazwisko</string>
+    <string name="age">Wiek</string>
+    <string name="shoesize">Nr buta</string>
 </resources>
