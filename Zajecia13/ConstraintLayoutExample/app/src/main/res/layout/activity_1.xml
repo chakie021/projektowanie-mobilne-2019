@@ -83,10 +83,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="40dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        tools:layout_editor_absoluteY="181dp" />
+        android:textSize="40dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView11"
@@ -95,8 +95,8 @@
         android:layout_marginStart="16dp"
         android:text="TextView"
         android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        tools:layout_editor_absoluteY="177dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView12"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="TextView"
-        android:textSize="20"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        tools:layout_editor_absoluteY="174dp" />
+        android:textSize="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView11" />
 </androidx.constraintlayout.widget.ConstraintLayout>
