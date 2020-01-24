@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ConstraintLayoutExample</string>
+    <string name="actitity1">Aktywność 1</string>
+    <string name="activity2">Aktywność 2</string>
+    <string name="activity3">Aktywność 3</string>
+    <string name="activity4">Aktywność 4</string>
 </resources>
