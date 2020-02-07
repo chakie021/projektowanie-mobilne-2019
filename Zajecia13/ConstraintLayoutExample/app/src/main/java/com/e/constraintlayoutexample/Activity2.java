@@ -3,6 +3,7 @@ package com.e.constraintlayoutexample;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class Activity2 extends AppCompatActivity {
 
         for(int i=5;i<100;i++)
             mStudentNames.add("Imie"+i);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new SimpleListAdapter(mStudentNames));
 
 
     }
