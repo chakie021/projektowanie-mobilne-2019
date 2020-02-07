@@ -28,7 +28,8 @@ public class SimpleListAdapter extends RecyclerView.Adapter<SimpleListAdapter.Si
 
     @Override
     public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
-        holder.name.setText(mItems.get(position));
+        holder.name.setText(mItems.get(position).getName());
+        holder.surname.setText(mItems.get(position).getSurname());
     }
 
     @Override
@@ -39,11 +40,13 @@ public class SimpleListAdapter extends RecyclerView.Adapter<SimpleListAdapter.Si
     class SimpleViewHolder extends RecyclerView.ViewHolder{
 
         final TextView name;
+        final TextView surname;
 
         public SimpleViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.name);
+            surname = itemView.findViewById(R.id.surname);
         }
     }
 }
