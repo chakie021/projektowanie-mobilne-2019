@@ -1,7 +1,9 @@
 package com.e.constraintlayoutexample;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,23 +21,29 @@ public class SimpleListAdapter extends RecyclerView.Adapter<SimpleListAdapter.Si
     @NonNull
     @Override
     public SimpleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
+        return new SimpleViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SimpleViewHolder holder, int position) {
-
+        holder.name.setText(mItems.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mItems.size();
     }
 
     class SimpleViewHolder extends RecyclerView.ViewHolder{
 
+        final TextView name;
+
         public SimpleViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            name = itemView.findViewById(R.id.name);
         }
     }
 }
