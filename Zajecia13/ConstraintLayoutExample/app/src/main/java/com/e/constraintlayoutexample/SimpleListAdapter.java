@@ -8,13 +8,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleListAdapter extends RecyclerView.Adapter<SimpleListAdapter.SimpleViewHolder>{
 
-    ArrayList<Student> mItems;
+    List<Student> mItems;
 
-    SimpleListAdapter(ArrayList<Student> items){
+    SimpleListAdapter(List<Student> items){
         mItems = items;
     }
 

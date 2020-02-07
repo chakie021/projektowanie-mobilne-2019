@@ -1,6 +1,12 @@
 package com.e.constraintlayoutexample;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "studenci")
 public class Student {
+    @PrimaryKey
+    Long id;
     String name;
     String surname;
 
