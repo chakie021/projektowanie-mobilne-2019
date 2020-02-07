@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class SimpleListAdapter extends RecyclerView.Adapter<SimpleListAdapter.SimpleViewHolder>{
 
-    ArrayList<String> mItems;
+    ArrayList<Student> mItems;
 
-    SimpleListAdapter(ArrayList<String> items){
+    SimpleListAdapter(ArrayList<Student> items){
         mItems = items;
     }
 

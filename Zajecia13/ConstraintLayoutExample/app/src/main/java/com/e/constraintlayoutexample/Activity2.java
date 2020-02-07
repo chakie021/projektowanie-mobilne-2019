@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class Activity2 extends AppCompatActivity {
 
-    ArrayList<String> mStudentNames = new ArrayList<>(Arrays.asList("Imie1","Imie2","Imie3","Imie4"));
+    ArrayList<Student> mStudentNames = new ArrayList<>();
 
     RecyclerView recyclerView;
 
@@ -24,7 +24,7 @@ public class Activity2 extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         for(int i=5;i<100;i++)
-            mStudentNames.add("Imie"+i);
+            mStudentNames.add(new Student("Imie"+i,"Nazwisko"+i));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new SimpleListAdapter(mStudentNames));
